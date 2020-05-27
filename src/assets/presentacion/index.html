@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación</title>
+
+    <!-- Bootstrap -->
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- P5 JS  -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script> -->
+
+    <!-- THREE JS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script> -->
+    <!-- <script src="js/main.js"></script> -->
+
+    <!-- Mis Archivos -->
+    <!-- <script src="./render/planeRender.js" type="module" ></script> -->
+    <!-- <script src=""></script> -->
+    <script src="./planeRender.js" type="module"></script>
+    <script src="./planeRender2.js" type="module"></script>
+    <script src="./script.js" type="text/javascript" ></script>
+    <script src="./libs.js" type="text/javascript" ></script>
+</head>
+
+<body  onload='main()'>
+
+    <section class="bg-primary">
+        <div class="row">
+            <div class="container col-8 text-center pt-5 text-light">
+                <h1 class="h1 font-weight-bold">¿Que es webGL?</h1>
+                <h4 class="pt-4">API de Javascript para poder comunicarse con la GPU del navegador </h4>
+                <ul class="col text-left ml-5 pt-4">
+                    <h3 class="h2 font-weight-bold">Caracteristicas</h3>
+                    <li class="pt-3 h5">Javascript en monohilo (una cosa a la vez, asincrono; sincrono en ejecuacion )</li>
+                    <li class="pt-3 h5">THREE pinta triangulos</li>
+                    <li class="pt-3 h5">GPU se hace en un hilo separado </li>
+                    <li class="pt-3 h5">Especializada en operaciones con matrices "Pinta triangulos " </li>
+                </ul>
+
+            </div>
+            <!-- <div id="sketch-holder" class="col-3 d-flex align-items-center ml-3">
+              
+            </div> -->
+            <div class="col-2 d-flex align-items-center mr-3" id="WebGL-output"></div>
+
+        </div>
+    </section>
+
+    <section class="bg-info pt-4">
+        <h1 class="h1 font-weight-bold text-center text-light">Terminología</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 d-flex align-items-center">
+                    <div class="card card-body bg-info ">
+                        <ul class="text-left pl-5 text-light">
+                            <h3>Shaders</h3>
+                            <li class="h4">Vertex Shader</li>
+                            <p>Coordenadas, vertices, posiciones</p>
+                            <li class="h4">Cortex Shader</li>
+                            <p>textura, luces, sombras </p>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card card-body bg-info ">
+                        <img src="../webgl_schema.png" width="100%" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+<!-- DIFERENCIAS  -->
+    <section class="bg-light pt-4 mb-5">
+        <h1 class="h1 font-weight-bold text-center">Diferencias WEBGL vs THREE.JS</h1>
+        <div class="row pt-5">
+            <div class="col ml-5">
+                <canvas id='your_canvas' style='position: absolute; background-color: black;' class="mb-5"></canvas>
+                
+            </div>
+            <ul class="col pt-5">
+                <li>Definir los shader cortex y vertex shader</li>
+                <li>control total de la gpu</li>
+                <li>Mejor rendimiento </li>
+            </ul>
+
+            <div class="col">
+                <div  id="WebGL-output2"></div>
+            </div>
+            <ul class="col pt-5">
+                <li>Clases y metodos que infieren los shader</li>
+                <li>Control de formas, escenas, camaras, vistas</li>
+                <li>No se tiene el control total de la GPU </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="bg-info pt-5">
+        <h1 class="h1 font-weight-bold text-center text-light">Ejemplos</h1>
+        <div class="container text-center">
+            <ul class="col ml-5 pt-4">
+                <li><a href="https://threejs.org/" class="h3 text-light" target="_blank">THREE JS</a></li>
+                <li><a href="https://experiments.withgoogle.com/webgl-globe" class="h3 text-light" target="_blank">Globo</a></li>
+                <li><a href="https://www.clicktorelease.com/code/cruciform/ " class="h3 text-light" target="_blank">sala</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h1 class="h1 font-weight-bold text-center text-light">Ejemplos</h1>
+
+    </section>
+</body>
+
+</html>
